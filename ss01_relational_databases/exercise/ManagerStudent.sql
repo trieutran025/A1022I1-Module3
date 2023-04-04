@@ -1,5 +1,5 @@
-create database manager_student;
-use manager_student;
+create database student_manager;
+use student_manager;
 create table class(
 	id int auto_increment primary key,
     name varchar(20) not null
