@@ -16,6 +16,7 @@ create table order_detail(
 	o_id int,
     p_id int,
     od_qty varchar(20),
+    primary key(o_id,p_id),
     foreign key(o_id) references orders(o_id),
     foreign key(p_id) references product(p_id) 
 );

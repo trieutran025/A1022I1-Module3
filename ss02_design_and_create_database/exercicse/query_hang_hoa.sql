@@ -36,6 +36,7 @@ create table don_dh(
 create table chi_tiet_dh(
 	ma_vtu varchar(20),
     so_dn int,
+    primary key(ma_vtu,so_dn),
     foreign key(ma_vtu) references vat_tu(ma_vtu),
     foreign key(so_dn) references don_dh(so_dn)
 );
