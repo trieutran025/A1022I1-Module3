@@ -2,9 +2,7 @@ CREATE DATABASE IF NOT EXISTS manager_product;
 use manager_product;
 CREATE TABLE phieu_xuat(
 	so_px INT  PRIMARY KEY,
-    ngay_xuat DATETIME,
-    dg_xuat INT,
-    sl_xuat INT
+    ngay_xuat DATETIME
 );
 CREATE TABLE vat_tu(
 	ma_VTU VARCHAR(10) PRIMARY KEY,
@@ -13,19 +11,21 @@ CREATE TABLE vat_tu(
 CREATE TABLE chi_tiet_phieu_xuat(
 	so_px INT,
     ma_VTU VARCHAR(10),
+    dg_xuat INT,
+    sl_xuat INT,
     PRIMARY KEY(so_px,ma_VTU),
     FOREIGN KEY(so_px) REFERENCES phieu_xuat(so_px),
     FOREIGN KEY(ma_VTU) REFERENCES vat_tu(ma_VTU)
 );
 CREATE TABLE phieu_nhap(
 	so_PN INT  PRIMARY KEY,
-	ngay_nhap DATETIME,
-    dg_nhap INT,
-    sl_nhap INT
+	ngay_nhap DATETIME
 );
 CREATE TABLE chi_tiet_phieu_nhap(
 	so_PN INT,
     ma_VTU VARCHAR(10),
+    dg_nhap INT,
+    sl_nhap INT,
     PRIMARY KEY(so_PN,ma_VTU),
     FOREIGN KEY(so_PN) REFERENCES phieu_nhap(so_PN),
     FOREIGN KEY(ma_VTU) REFERENCES vat_tu(ma_VTU)
