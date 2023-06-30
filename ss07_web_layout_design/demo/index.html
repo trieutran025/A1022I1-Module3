@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grid {
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+        }
+        #item1 {
+            grid-column-start: 5;
+            grid-column-end: 9;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            background-color: blueviolet;
+        }
+
+        #item2 {
+            grid-area: 3/2/4/3;
+            background-color: yellow;
+        }
+
+
+        @media only screen and (max-width: 500px) {
+            #item1 {
+                grid-column-start: 5;
+                grid-column-end: 9;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                background-color: blueviolet;
+            }
+        }
+
+        @media only screen and (max-width: 250px) {
+            #item1 {
+                font-size: 30pt;
+                grid-column-start: 1;
+                grid-column-end: 13;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                background-color: blueviolet;
+            }
+        }
+
+        ​
+    </style>
+</head>
+<body>
+<div id="grid">
+    <div id="item1">Xin chào</div>
+    <div id="item2">Codegym</div>
+</div>
+</body>
+</html>
