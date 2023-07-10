@@ -17,7 +17,7 @@
             <th>Date release</th>
             <th>Category</th>
         </tr>
-        <c:forEach items="${requestScope.products}" var="p">
+        <c:forEach items="${searchProduct}" var="p">
         <tr>
             <td>${p.id}</td>
             <td>${p.name}</td>
